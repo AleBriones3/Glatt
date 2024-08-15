@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glatt</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --primary-color-shadow: #2c3e50;
+            --secondary-color: #1abc9c;
+        }
+
+        html, body, main {
+            height: 100%;
+        }
+
+        ::selection {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .jumbotron {
+            padding-top: 150px;
+            padding-bottom: 150px;
+            margin-bottom: 0;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .photo-cover {
+            background: var(--primary-color) url('https://estaticos-cdn.prensaiberica.es/clip/e0174b68-6c70-461e-b054-b8fff97accb2_21-9-aspect-ratio_default_0.jpg') no-repeat center center / cover fixed;
+            height: 100%;
+            position: relative;
+        }
+
+        .background-primary {
+            background: var(--primary-color);
+        }
+
+        .background-secondary {
+            background: var(--primary-color-shadow);
+        }
+
+        .large {
+            font-size: 4em;
+        }
+
+        .medium {
+            font-size: 2em;
+        }
+
+        .transparent {
+            background: transparent;
+        }
+
+        .navbar-inverse {
+            box-shadow: none;
+            border-bottom: none;
+        }
+
+        .thumbnail {
+            cursor: pointer;
+            position: relative;
+            display: flex;
+        }
+
+        .thumbnail-svg {
+            flex: 1 0 auto;
+            padding: .5em;
+            max-height: 6em;
+        }
+
+        .thumbnail-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary-color);
+            opacity: 0;
+            transition: all 0.2s ease-in;
+        }
+
+        .thumbnail:hover .thumbnail-overlay {
+            opacity: 1;
+            transition: all 0.2s ease-in;
+        }
+
+        .full-screen {
+            background: #eee;
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+            overflow-y: scroll;
+        }
+
+        .close-window {
+            cursor: pointer;
+        }
+        .text-inverse {
+            color: #ffffff;
+        }
+
+        .fill:hover,
+        .fill:focus {
+        box-shadow: inset 0 0 0 2em var(--hover);
+        }
+
+        .pulse:hover, 
+        .pulse:focus {
+        animation: pulse 1s;
+        box-shadow: 0 0 0 2em transparent;
+        }
+
+        @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 var(--hover); }
+        }
+
+        .close:hover,
+        .close:focus {
+        box-shadow: 
+            inset -3.5em 0 0 0 var(--hover),
+            inset 3.5em 0 0 0 var(--hover);  
+        }
+
+        .raise:hover,
+        .raise:focus {
+        box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+        transform: translateY(-0.25em);
+        }
+
+        .up:hover,
+        .up:focus {
+        box-shadow: inset 0 -3.25em 0 0 var(--hover);
+        }
+
+        .slide:hover,
+        .slide:focus {
+        box-shadow: inset 6.5em 0 0 0 var(--hover);
+        }
+
+        .offset {  
+        box-shadow: 
+            0.3em 0.3em 0 0 var(--color),
+            inset 0.3em 0.3em 0 0 var(--color);
+        
+        &:hover,
+        &:focus {
+            box-shadow: 
+            0 0 0 0 var(--hover),
+            inset 6em 3.5em 0 0 var(--hover);
+        }
+        }
+
+        button {  
+        color: var(--color);
+        transition: 0.25s;
+        
+        &:hover,
+        &:focus { 
+            border-color: var(--hover);
+            color: #fff;
+        }
+        }
+
+
+        button {
+        background: none;
+        border: 2px solid;
+        font: inherit;
+        line-height: 1;
+        margin: 0.5em;
+        padding: 1em 2em;
+        }
+
+        h1 { font-weight: 400; }
+
+        code { 
+        color: #e4cb58;
+        font: inherit;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+                <a class="navbar-brand" href="#" target="newwindow">GLATT</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#about">Acerca de nosotros</a></li>
+                    <li><a href="#portfolio">Nuestros servicios</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="jumbotron photo-cover text-inverse">
+            <div class="col-md-6 text-center center">
+                <h1>GLATT</h1>
+                <p>Servicios Integrales</p>
+                <a href="#about">
+                    <span class="fui-triangle-down large"></span>
+                </a>
+            </div>
+        </div>
+        <div id="about" class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h2>Somos GLATT LOGISTICS</h2>
+                        <hr>
+                        <p class="lead text-justify ">
+                            Empresa especializada en servicios integrales como lo son cambios de régimen, regularizaciones, rectificaciones y operaciones virtuales. Con mas de 25 años de experiencia y con un equipo humano altamente calificado, compuesto por profesionales con años de experiencia en el ámbito.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio" class="jumbotron background-primary text-inverse">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-center">Nuestros Servicios</h2>
+                    <hr>
+                    <div class="col-xs-6 col-md-3">
+                        <button class="raise">Cambio de Régimen</button>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <button class="raise">Regularizaciones</button>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <button class="raise">Rectificaciones</button>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <button class="raise">Operaciones Virtuales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="jumbotron background-secondary text-inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h2>Contacto</h2>
+                        <hr>
+                        <p class="lead">¿Cómo podemos ayudarte?</p>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Alexa Rojas Puente">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico:</label>
+                                <input type="email" class="form-control" id="email" placeholder="alexa34@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Motivo"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SCRIP -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>+
+    <script>
+        $(document).ready(function () {
+            $('body').scrollspy({ target: '.navbar', offset: 50 });
+
+            $('.thumbnail').on('click', function () {
+                var page = $(this).attr('page');
+                $('.full-screen').show().html('<h1>' + page + '</h1>');
+            });
+
+            $('.close-window').on('click', function () {
+                $('.full-screen').hide();
+            });
+        });
+    </script>
+</body>
+</html>
