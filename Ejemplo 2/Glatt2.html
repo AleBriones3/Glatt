@@ -319,7 +319,7 @@
             white-space: nowrap;
             margin: 0 auto;
             letter-spacing: .15em;
-            animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+            animation: typing 3.5s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
         }
 
         @keyframes typing {
@@ -331,6 +331,7 @@
             from, to { border-color: transparent }
             50% { border-color: black; }
         }
+
         .lead {
             font-size: 16px;
             transition: all 0.3s ease-in-out;
@@ -381,6 +382,20 @@
             box-shadow: none; 
         }
 
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px; 
+        }
+
+        .image-container img {
+        max-width: 50%; 
+        height: auto;
+        padding: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
     </style>
 </head>
 <body>
@@ -405,7 +420,7 @@
     </nav>
     
 
-    <a href="https://wa.me/1234567890?text=Hola%20me%20gustaría%20saber%20más%20sobre%20sus%20servicios" target="_blank" class="whatsapp-button">
+    <a href="https://wa.me/524422068635" target="_blank" class="whatsapp-button">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -429,6 +444,9 @@
                         <p class="lead text-justify">
                             Empresa especializada en servicios integrales como cambios de régimen, regularizaciones, rectificaciones y operaciones virtuales. Con más de 25 años de experiencia y con un equipo humano altamente calificado, compuesto por profesionales con años de experiencia en el ámbito.
                         </p>
+                        <div class="image-container">
+                            <img src="fotos/barco.jpeg" alt="Quiénes Somos">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -451,6 +469,7 @@
                     <div class="col-xs-6 col-md-3">
                         <button class="raise" data-service="virtuales">Operaciones Virtuales</button>
                     </div>
+                    
                 </div>
                 <!-- Secciones ocultas -->
                 <div class="row">
