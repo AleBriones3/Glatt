@@ -313,24 +313,7 @@
             margin-top: 15px;
             box-shadow: 0 2px 5px #083a6c;
         }
-        .typing-effect {
-            overflow: hidden;
-            border-right: .15em solid #000; 
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(30, end) infinite, blink-caret 0.75s step-end infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: black; }
-        }
+       
 
         .lead {
             font-size: 16px;
@@ -382,19 +365,36 @@
             box-shadow: none; 
         }
 
-        .image-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 10px; 
-        }
+     .image-container {
+    text-align: right;
+}
 
-        .image-container img {
-        max-width: 50%; 
-        height: auto;
-        padding: 10px; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+@media (max-width: 768px) {
+    .image-container {
+        text-align: center;
+        margin-top: 20px;
     }
+    .image-container img {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+.subtitle.typing-effect {
+    margin-top: 0; 
+    text-align: left; 
+    font-size: 3.5em; 
+}
+
+.lead.text-justify {
+    text-align: left; 
+    margin-top: 20px;
+}
+
+
+
 
     </style>
 </head>
@@ -438,18 +438,19 @@
         <div id="about" class="jumbotron">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="col-md-6 text-center">
                         <h2 class="subtitle typing-effect">¿Quiénes Somos?</h2>
                         <hr>
                         <p class="lead text-justify">
                             Empresa especializada en servicios integrales como cambios de régimen, regularizaciones, rectificaciones y operaciones virtuales. Con más de 25 años de experiencia y con un equipo humano altamente calificado, compuesto por profesionales con años de experiencia en el ámbito.
                         </p>
-                        <div class="image-container">
-                            <img src="fotos/barco.jpeg" alt="Quiénes Somos">
-                        </div>
+                    </div>
+                    <div class="col-md-6 image-container">
+                        <img src="fotos/barco.jpeg" alt="Quiénes Somos" class="img-responsive">
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <div id="portfolio" class="jumbotron background-primary text-inverseC">
             <div class="container">
