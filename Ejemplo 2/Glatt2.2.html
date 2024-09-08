@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glatt</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="fotos/Glatt.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!--     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #729EAD;  
+            --primary-color-shadow: #34495e;  
+            --secondary-color: #729EAD;
+        }
+
+        html, body, main {
+            height: 100%;
+            font-family: 'Century Gothic', CenturyGothic; 
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-transform: uppercase; 
+        }
+
+        p, a, li, span {
+            text-transform: none; 
+        }
+
+        /* BARRA DE NAVEGACIÓN */
+        .navbar-white .nav > li > a {
+            color: #ffffff; /* Color blanco cuando en la parte superior */
+        }
+
+
+       #navbar .nav > li > a {
+            color: #000000; 
+        }
+
+        #navbar .nav > li.active > a {
+            color: rgb(251, 251, 251); 
+        } 
+  
+        .navbar {
+            border: none;
+            margin-bottom: 0;
+            background: transparent;
+            padding: 0;
+        }
+    
+        .navbar-brand {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar-brand img {
+            height: 50px; 
+        }
+
+        /* SEPARACIÓN BLANCA ENTRE SECCIONES */
+       .jumbotron {
+            padding-top: 150px;
+            padding-bottom: 150px;
+            margin-bottom: 0;
+        } 
+
+        /* Centrar contenido */
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Imagen de fondo en la sección principal */
+        .photo-cover {
+            background: var(--primary-color) url('https://estaticos-cdn.prensaiberica.es/clip/e0174b68-6c70-461e-b054-b8fff97accb2_21-9-aspect-ratio_default_0.jpg') no-repeat center center / cover fixed;
+            height: 100%;
+            position: relative;
+            overflow: hidden; 
+        }
+
+        /* SOMBRA DE FONDO */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); 
+            z-index: 1;
+        }
+
+       
+        .text-overlay {
+            position: relative; 
+            z-index: 2;
+            color: #ffffff;
+            padding: 1em;
+            border-radius: 5px;
+        }
+
+        /* Estilo del texto SOLUCIONES GLATT */
+        .playfair-text {
+            font-family: 'Century Gothic', CenturyGothic;
+            color: #ffffff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); 
+            font-size: 12em;
+            font-weight: 400;
+        }
+
+        /* Subtítulo en la página principal */
+        .subtitle {
+            font-family: 'Century Gothic', CenturyGothic;
+            font-size: 4em;
+            color: #083A6C;
+            margin-top: 0.5em;
+            text-transform: uppercase; /* Texto en mayúsculas */
+        }
+
+        /* Sección de servicios (portfolio) */
+        #portfolio {
+            font-family: 'Century Gothic', CenturyGothic;
+        }
+
+        /* Estilos de fondo para NUESTROS SERVICIOS */
+        .background-primary {
+            background: #083A6C;
+        }
+
+        .background-secondary {
+            background: #34495e;
+        }
+
+        /* Tamaños de fuente */
+        .large {
+            font-size: 4em;
+        }
+
+        .medium {
+            font-size: 2em;
+        }
+
+        /* Barra de navegación transparente */
+        .navbar-inverse {
+            box-shadow: none;
+            border-bottom: none;
+        }
+
+        /* Texto con color invertido */
+        .text-inverse {
+            color: #ffffff;
+        }
+        .text-inverseC {
+            color: #ffffff;
+        }
+
+        /* COLOR DE HOVER EN LOS BOTONES DE NUESTROS SERVICIOS */
+        .raise:hover,
+        .raise:focus {
+            box-shadow: 0 0.5em 0.5em -0.4em #ffffff;
+            transform: translateY(-0.25em);
+        }
+
+         /* COLOR FONDO DE QUIENES SOMOS */
+        #about {
+            background-color: #fbfbfb; 
+        }
+
+        /* BOTONES NUESTROS SERVICIOS */
+        button {
+            color: #ffffff;
+            transition: 0.25s;
+        }
+
+        button:hover, button:focus {
+            border-color: #ffffff;
+            /* TEXTO DEL BOTÓN DE NUESTROS SERVICIOS */
+            color: #ffffff;
+        }
+
+        /* DIMENSIONES DE LOS BOTONES DE NUESTROS SERVICIOS  */
+        button {
+            background: none;
+            border: 2px solid;
+            font: inherit;
+            line-height: 1;
+            margin: 0.5em;
+            padding: 1em 2em;
+        }
+
+        /* LOGO DE LA PÁGINA */
+        .logo-img {
+            width: 60px; 
+            height: 60px;
+            margin-top: 5px;
+            margin-left: 20px;
+        }
+/* 
+        .typing-effect {
+            overflow: hidden;
+            border-right: .15em solid #000; 
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+        } */
+
+
+        /* BONTÓN DE WhatsApp  */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            z-index: 10;
+        }
+        /* IMAGEN DE QUIENES SOMOS */
+        .img-highlight {
+            border: 5px solid #fbfbfb; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            margin-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top transparent">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" target="newwindow">
+                    <img src="fotos/Glatt.png" alt="Logo" class="logo-img">
+                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#about">Acerca de Nosotros</a></li>
+                    <li><a href="#portfolio">Nuestros Servicios</a></li>
+                    <li><a href="#contact">Contáctanos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <a href="https://wa.me/524422068635" target="_blank" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <main data-spy="scroll" data-target=".navbar" data-offset="50">
+        <div class="jumbotron photo-cover">
+            <div class="overlay"></div> 
+            <div class="col-md-6 text-center center text-overlay">
+                <h1 class="playfair-text">GLATT</h1>
+                <p class="playfair-text">Soluciones Integrales</p>
+                <a href="#about">
+                    <span class="fui-triangle-down large"></span>
+                </a>
+            </div>
+        </div>
+        <div id="about" class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 text-center">
+                        <h2 class="subtitle typing-effect">¿Quiénes Somos?</h2>
+                        <hr>
+                        <p class="lead text-justify">
+                            Empresa especializada en servicios integrales como cambios de régimen, regularizaciones, rectificaciones y operaciones virtuales. Con más de 25 años de experiencia y con un equipo humano altamente calificado, compuesto por profesionales con años de experiencia en el ámbito.
+                        </p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="fotos/barco.jpeg" class="img-responsive img-highlight" alt="Descripción de la imagen">
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        <div id="portfolio" class="jumbotron background-primary text-inverseC">
+            <div class="container">
+                <div class="row">
+                    <h2 class="text-center">Nuestros Servicios</h2>
+                    <br>
+                    <hr>
+                    <div class="col-xs-6 col-md-3">
+                        <button class="raise" data-service="regimen">Cambio de Régimen</button>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <button class="raise" data-service="regularizaciones">Regularizaciones</button>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <button class="raise" data-service="rectificaciones">Rectificaciones</button>
+                    </div>
+                    <div class="col-xs-6 col-md-3">
+                        <button class="raise" data-service="virtuales">Operaciones Virtuales</button>
+                    </div>
+                    
+                </div>
+                <!-- Secciones ocultas -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="accordion-content">
+                            <div class="service-content" id="regimen-content" style="display: none; margin-top: 20px;">
+                                <p><strong>Cambio de Régimen:</strong> Aquí puedes detallar la información sobre el cambio de régimen, incluyendo procesos, beneficios y requisitos necesarios.</p>
+                            </div>
+                            <div class="service-content" id="regularizaciones-content" style="display: none; margin-top: 20px;">
+                                <p><strong>Regularizaciones:</strong> Información detallada sobre regularizaciones, cómo se realizan, plazos y documentación requerida.</p>
+                            </div>
+                            <div class="service-content" id="rectificaciones-content" style="display: none; margin-top: 20px;">
+                                <p><strong>Rectificaciones:</strong> Explicación sobre el proceso de rectificaciones, pasos a seguir y asesoría disponible.</p>
+                            </div>
+                            <div class="service-content" id="virtuales-content" style="display: none; margin-top: 20px;">
+                                <p><strong>Operaciones Virtuales:</strong> Detalles sobre las operaciones virtuales que ofrecemos, beneficios de su uso y cómo acceder a ellas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="jumbotron background-secondary text-inverse">
+            <br><br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="fotos/escritorio.jpeg" alt="Imagen de Contacto" class="img-responsive">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <h2>Contáctanos</h2>
+                            <hr>
+                            <p class="lead">¿Cómo podemos ayudarte?</p>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Alexa Rojas Puente">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico:</label>
+                                <input type="email" class="form-control" id="email" placeholder="alexa34@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Motivo"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Script de secciones ocultas -->
+    <script>
+        $(document).ready(function(){
+            $('.raise').on('click', function(){
+                var service = $(this).data('service');
+                var contentDiv = $('#' + service + '-content');
+                
+                if(contentDiv.is(':visible')) {
+                    contentDiv.slideUp();
+                } else {   
+                    $('.service-content').slideUp();    
+                    contentDiv.slideDown();
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+    // Detectar la sección activa en función del desplazamiento
+    $(window).on('scroll', function () {
+        var scrollPosition = $(document).scrollTop();
+        $('.navbar-nav > li').each(function () {
+            var sectionId = $(this).find('a').attr('href');
+            var $section = $(sectionId);
+
+            if ($section.length) {
+                var sectionOffset = $section.offset().top;
+                var sectionHeight = $section.outerHeight();
+
+                if (scrollPosition >= sectionOffset - 50 && scrollPosition < sectionOffset + sectionHeight - 50) {
+                    $('.navbar-nav > li').removeClass('active');
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            }
+        });
+    });
+
+        // Inicializar el estado de los enlaces cuando se carga la página
+        $(window).trigger('scroll');
+    });
+
+    </script>
+</body>
+</html>

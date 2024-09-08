@@ -14,11 +14,11 @@
 
     <style>
         :root {
-            --primary-color: #083a6c;  /* 34495e */
-            --primary-color-shadow: #cfcfcf;  /* 2c3e50 */ /* 9f9f9f */
-            --secondary-color: #1abc9c;
-            --hover: #ffffff; 
-            --color: #ffffff;
+            --primary-color: #CFCFCF;  /* 34495e */
+            --primary-color-shadow: #183A4F; /* cfcfcf */
+            --secondary-color: #688DA4;
+            --hover: #072233; 
+            --color: #072233;
         }
 
     
@@ -108,10 +108,20 @@
         .subtitle {
             font-family: 'Century Gothic', CenturyGothic; 
             font-size: 4em; 
-            color: #083a6c;
+            color: #688DA4;
             margin-top: 0.5em;
             text-transform: uppercase; 
         }
+/* 
+        .typing-effect {
+            overflow: hidden;
+            border-right: .15em solid #000; 
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+        }
+ */
 
         #portfolio {
             font-family: 'Century Gothic', CenturyGothic; 
@@ -171,7 +181,7 @@
         }
 
         .full-screen {
-            background: #513434;
+            background: #CFCFCF;
             height: 100%;
             width: 100%;
             position: fixed;
@@ -186,10 +196,10 @@
         }
 
         .text-inverse {
-            color: #083a6c;
+            color: #ffffff;
         }
         .text-inverseC {
-            color: #ffffff;
+            color: #072233;
         }
 
         .fill:hover,
@@ -250,7 +260,7 @@
             &:hover,
             &:focus { 
                 border-color: var(--hover);
-                color: #fff;
+                color: #083a6c;
             }
         }
 
@@ -308,10 +318,10 @@
         }
         .service-content {
             padding: 20px;
-            background-color: #083a6c;
+            background-color: #CFCFCF;
             border-radius: 5px;
             margin-top: 15px;
-            box-shadow: 0 2px 5px #083a6c;
+            box-shadow: 0 2px 5px #CFCFCF;
         }
        
 
@@ -352,18 +362,19 @@
             padding-right: 0;
             padding-left: 0;
         }
-        .btn-primary {
-            background-color: #083a6c; 
-            border-color: #083a6c; 
-        }
+  .btn-primary {
+    background-color: #CFCFCF; 
+    border-color: #CFCFCF; 
+}
 
-        .btn-primary:hover,
-        .btn-primary:focus,
-        .btn-primary:active {
-            background-color: #0a4d79; 
-            border-color: #083a6c; 
-            box-shadow: none; 
-        }
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #CFCFCF; 
+    border-color: #CFCFCF; 
+    box-shadow: none; 
+}
+
 
      .image-container {
     text-align: right;
@@ -437,12 +448,14 @@
         </div>
         <div id="about" class="jumbotron">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="subtitle typing-effect">¿Quiénes Somos?</h2>
-                    <hr>
-                    <p class="lead text-justify">
-                        Empresa especializada en servicios integrales como cambios de régimen, regularizaciones, rectificaciones y operaciones virtuales. Con más de 25 años de experiencia y con un equipo humano altamente calificado, compuesto por profesionales con años de experiencia en el ámbito.
-                    </p>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <h2 class="subtitle typing-effect">¿Quiénes Somos?</h2>
+                        <hr>
+                        <p class="lead text-justify">
+                            Empresa especializada en servicios integrales como cambios de régimen, regularizaciones, rectificaciones y operaciones virtuales. Con más de 25 años de experiencia y con un equipo humano altamente calificado, compuesto por profesionales con años de experiencia en el ámbito.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -529,47 +542,37 @@
             </div>
         </div>
          -->
-        
          <div id="contact" class="jumbotron background-secondary text-inverse">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="card contact-card">
-                            <div class="row no-gutters">
-                                <div class="col-md-6">
-                                    <img src="fotos/escritorio.jpeg" alt="Imagen de Contacto" class="card-img">
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <div class="text-center">
-                                            <h2>Contáctanos</h2>
-                                            <hr>
-                                            <p class="lead">¿Cómo podemos ayudarte?</p>
-                                        </div>
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="name">Nombre:</label>
-                                                <input type="text" class="form-control" id="name" placeholder="Alexa Rojas Puente">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="email">Correo Electrónico:</label>
-                                                <input type="email" class="form-control" id="email" placeholder="alexa34@gmail.com">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="message">Mensaje:</label>
-                                                <textarea class="form-control" id="message" rows="5" placeholder="Motivo"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Enviar</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="col-md-6">
+                        <img src="fotos/escritorio.jpeg" alt="Imagen de Contacto" class="img-responsive">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <h2>Contáctanos</h2>
+                            <hr>
+                            <p class="lead">¿Cómo podemos ayudarte?</p>
                         </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Nombre:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Alexa Rojas Puente">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico:</label>
+                                <input type="email" class="form-control" id="email" placeholder="alexa34@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Motivo"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Enviar</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        
         
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
