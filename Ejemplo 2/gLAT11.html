@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glatt 4</title>
+    <title>Glatt W3W333</title>
     <link rel="icon" type="image/png" sizes="32x32" href="fotos/Glatt.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -14,17 +14,16 @@
 
     <style>
         :root {
-            --primary-color: #083a6c;  /* 34495e */
-            --primary-color-shadow: #cfcfcf;  /* 2c3e50 */
+            --primary-color: #607682;  /* 34495e */
+            --primary-color-shadow: #083a6c;  /* 2c3e50 */
             --secondary-color: #1abc9c;
             --hover: #ffffff; 
-            --color: #ffffff;
+            --color: #14284a;
         }
 
-    
         html, body, main {
             height: 100%;
-            font-family: 'Avant Garde', Avantgarde;
+            font-family: 'Times New Roman', serif; 
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -98,7 +97,7 @@
         }
 
         .playfair-text {
-            font-family: 'Avant Garde', Avantgarde;
+            font-family: 'Cinzel', serif; 
             color: #ffffff;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
             font-size: 12em;
@@ -106,23 +105,30 @@
         }
 
         .subtitle {
-            font-family: 'Avant Garde', Avantgarde;
+            font-family: 'Cinzel', serif;
             font-size: 4em; 
-            color: #083a6c;
+            color: #083A6C;
             margin-top: 0.5em;
             text-transform: uppercase; 
         }
+        
 
         #portfolio {
-            font-family: 'Avant Garde', Avantgarde;
+            font-family: 'Cinzel', serif; 
         }
 
-        .background-primary {
-            background: var(--primary-color);
+         /* COLOR FONDO DE QUIENES SOMOS */
+         #contact {
+            background-color: #083A6C; 
+        }
+
+         /* Estilos de fondo para NUESTROS SERVICIOS */
+         .background-primary {
+            background: #CFCFCF;
         }
 
         .background-secondary {
-            background: var(--primary-color-shadow);
+            background: #CFCFCF;
         }
 
         .large {
@@ -214,9 +220,10 @@
                 inset 3.5em 0 0 0 var(--hover);  
         }
 
+        /* HOVER DE BOTONES DE NUESTROS SERVICIOS */
         .raise:hover,
         .raise:focus {
-            box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+            box-shadow: 0 0.5em 0.5em -0.4em #083a6c;
             transform: translateY(-0.25em);
         }
 
@@ -244,13 +251,13 @@
         }
 
         button {  
-            color: var(--color);
+            color: #083a6c;
             transition: 0.25s;
             
             &:hover,
             &:focus { 
-                border-color: var(--hover);
-                color: #fff;
+                border-color: #083a6c;
+                color: #083a6c;
             }
         }
 
@@ -306,39 +313,17 @@
             font-size: 28px;
             text-decoration: none; 
         }
+
+        /* SERVICIOS OCULTOS */
         .service-content {
             padding: 20px;
-            background-color: #083a6c;
+            background-color: #CFCFCF;
             border-radius: 5px;
             margin-top: 15px;
-            box-shadow: 0 2px 5px #083a6c;
-        }
-        .typing-effect {
-            overflow: hidden;
-            border-right: .15em solid #000; 
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
-            animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+            box-shadow: 0 2px 5px #CFCFCF;
         }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: black; }
-        }
-        .lead {
-            font-size: 16px;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .lead:hover {
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
-        }
+        /* CARD DE CONTACTO */
         .card {
             border: 1px solid #99999900;
             border-radius: 5px;
@@ -358,17 +343,8 @@
         .card-body {
             padding: 20px;
         }
-
-        .row.no-gutters {
-            margin-right: 0;
-            margin-left: 0;
-        }
-
-        .row.no-gutters > .col-md-6 {
-            padding-right: 0;
-            padding-left: 0;
-        }
-        .btn-primary {
+          /* BOTON ENVIAR */
+          .btn-primary {
             background-color: #083a6c; 
             border-color: #083a6c; 
         }
@@ -424,7 +400,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2 text-center">
-                        <h2 class="subtitle typing-effect">¿Quiénes Somos?</h2>
+                        <h2 class="subtitle">¿Quiénes Somos?</h2>
                         <hr>
                         <p class="lead text-justify">
                             Empresa especializada en servicios integrales como cambios de régimen, regularizaciones, rectificaciones y operaciones virtuales. Con más de 25 años de experiencia y con un equipo humano altamente calificado, compuesto por profesionales con años de experiencia en el ámbito.
@@ -433,7 +409,7 @@
                 </div>
             </div>
         </div>
-        <div id="portfolio" class="jumbotron background-primary text-inverseC">
+        <div id="portfolio" class="jumbotron background-primary text-inverse">
             <div class="container">
                 <div class="row">
                     <h2 class="text-center">Nuestros Servicios</h2>
@@ -473,7 +449,6 @@
                 </div>
             </div>
         </div>
-       
         <div id="contact" class="jumbotron background-secondary text-inverse">
             <div class="container">
                 <div class="row">
@@ -513,8 +488,6 @@
                 </div>
             </div>
         </div>
-        
-        
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -534,34 +507,6 @@
                 }
             });
         });
-    </script>
-    <script>
-        $(document).ready(function () {
-    // Detectar la sección activa en función del desplazamiento
-    $(window).on('scroll', function () {
-        var scrollPosition = $(document).scrollTop();
-        $('.navbar-nav > li').each(function () {
-            var sectionId = $(this).find('a').attr('href');
-            var $section = $(sectionId);
-
-            if ($section.length) {
-                var sectionOffset = $section.offset().top;
-                var sectionHeight = $section.outerHeight();
-
-                if (scrollPosition >= sectionOffset - 50 && scrollPosition < sectionOffset + sectionHeight - 50) {
-                    $('.navbar-nav > li').removeClass('active');
-                    $(this).addClass('active');
-                } else {
-                    $(this).removeClass('active');
-                }
-            }
-        });
-    });
-
-        // Inicializar el estado de los enlaces cuando se carga la página
-        $(window).trigger('scroll');
-    });
-
     </script>
 </body>
 </html>
